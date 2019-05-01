@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "ced60213-b356-4c52-b642-ac7fd13f7dff",
+		"name": "node_with_mysql_rest_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hotels",
+			"item": [
+				{
+					"name": "get hotels list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3035/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3035",
+							"path": [
+								"hotels"
+							]
+						},
+						"description": "hotels"
+					},
+					"response": []
+				},
+				{
+					"name": "get hotel by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3035/hotels/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3035",
+							"path": [
+								"hotels",
+								"3"
+							]
+						},
+						"description": "hotels"
+					},
+					"response": []
+				},
+				{
+					"name": "create hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"ITC Kakatiya\",\n\t\"phone\":\"123456789\",\n\t\"place\":\"Mumbai\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3035/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3035",
+							"path": [
+								"hotels"
+							]
+						},
+						"description": "hotels"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stripe payment gateway",
+			"item": [
+				{
+					"name": "card payment method",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cardNo\":\"4242424242424242\",\n\t\"expMnth\":12,\n\t\"expYr\":2020,\n\t\"cvc\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3035/stripe/newPayment/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3035",
+							"path": [
+								"stripe",
+								"newPayment",
+								"card"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
